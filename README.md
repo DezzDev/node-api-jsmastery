@@ -8,10 +8,12 @@
 
 ## dependencies
 
-npx express-generator --no-view --git -> to create a project quick
-npm install -D nodemon -> to refresh changes
-npx eslint --init -> linter , remember set up eslint in settings
-npm install dotenv -> environment variables 
+- npx express-generator --no-view --git -> to create a project quick
+- npm install -D nodemon -> to refresh changes
+- npx eslint --init -> linter , remember set up eslint in settings
+- npm install dotenv -> environment variables
+- npm install mongodb -> driver for connect to mondoDb-atlas
+- npm install mongoose -> Orm to mongoDb
 
 ## video
 
