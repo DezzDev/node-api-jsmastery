@@ -14,6 +14,8 @@
 - npm install dotenv -> environment variables
 - npm install mongodb -> driver for connect to mondoDb-atlas
 - npm install mongoose -> Orm to mongoDb
+- npm install jsonwebtoken -> authentication
+- npm install bcryptjs -> allow us to generate randomized strings to hash our passwords
 
 ## video
 

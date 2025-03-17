@@ -2,6 +2,7 @@ const errorMiddleware = (err, _ ,res, next) =>{
   try {
    
     let error = { ...err };
+    // console.log({error});
     error.message = err.message;
 
     console.error(err);

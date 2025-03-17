@@ -18,8 +18,7 @@ app.use(express.urlencoded({ extended: true }));
 // parse cookies from the request headers and populate req.cookies with an object keyed by the cookie names. 
 // this need be imported before the routes
 app.use(cookieParser())
-// error middleware
-app.use(errorMiddleware)
+
 
 // routes
 app.use("/api/v1/auth", authRouter)
@@ -30,6 +29,8 @@ app.get('/', (req, res) => {
   res.send('Hello World !');
 })
 
+// error middleware, should be after the routes
+app.use(errorMiddleware)
 
 
 app.listen(PORT, async () => {
