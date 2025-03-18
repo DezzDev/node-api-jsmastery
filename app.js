@@ -6,6 +6,7 @@ import subscriptionRouter from "./routes/subscription.routes.js";
 import connectToDataBase from './database/mongoDb.js';
 import errorMiddleware from './middlewares/error.middleware.js';
 import { PORT } from './config/env.js';
+import arcjetMiddleware from './middlewares/arcjet.middleware.js';
 
 
 const app = express();
@@ -18,6 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 // parse cookies from the request headers and populate req.cookies with an object keyed by the cookie names. 
 // this need be imported before the routes
 app.use(cookieParser())
+// to protect the app from common attacks e.g. SQL injection and bots
+app.use(arcjetMiddleware)
 
 
 // routes
