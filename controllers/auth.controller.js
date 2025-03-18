@@ -100,6 +100,6 @@ export const signIn = async (req,res, next) =>{
   }
 }
 
-export const signOut = async (req,res, next) =>{
-  // implement sign out logic
-}
+// export const signOut = async (req,res, next) =>{
+//   // implement sign out logic
+// }

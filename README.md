@@ -17,6 +17,7 @@
 - npm install jsonwebtoken -> authentication
 - npm install bcryptjs -> allow us to generate randomized strings to hash our passwords
 - npm install @arcjet/node -> to protect our api from bot
+- npm install @upstash/workflow -> to create a workflow to send emails
 
 ## video
 
