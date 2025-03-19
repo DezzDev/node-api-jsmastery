@@ -3,6 +3,7 @@ import Subscription from "../models/subscription.model.js";
 // Esta línea importa la función createRequire del módulo module de Node.js. 
 // createRequire se utiliza para crear una función require que puede cargar módulos CommonJS en un entorno ES Module.
 import {createRequire} from "module";
+import { sendReminderEmail } from "../utils/send-email.js";
 
 
 // Aquí se crea una función require utilizando createRequire. 
@@ -35,7 +36,11 @@ export const sendReminders = serve(async(context) =>{
       await sleepUntilReminder(context,`Reminder ${daysBefore} days before`, reminderDate)
     }
 
-    await triggerReminder(context,`Reminder ${daysBefore} days before`)
+    // Check if the reminder date is today and trigger the reminder only one time
+    if(dayjs().isSame(reminderDate,"day")){
+      await triggerReminder(context,`${daysBefore} days before reminder`, subscription)
+     
+    }
   }
 
 })
@@ -51,9 +56,15 @@ const sleepUntilReminder = async(context,label, date) =>{
   await context.sleepUntil(label, date.toDate())
 }
 
-const triggerReminder = async(context,label) =>{
-  return await context.run(label, ()=>{
-    console.log(`Triggering ${label} reminder`);
+const triggerReminder = async(context,label, subscription) =>{
+  return await context.run(label, async ()=>{
+    console.log(`Triggering ${label}`);
     // send email, SMS, or other notification
+
+    await sendReminderEmail({
+      to: subscription.user.email,
+      type: label,
+      subscription
+    })
   })
 }

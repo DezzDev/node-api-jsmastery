@@ -19,7 +19,8 @@
 - npm install @arcjet/node -> to protect our api from bot
 - npm install @upstash/workflow -> to create a workflow to send emails
 - npm install dayjs -> to management dates more easy
-- npx @upstash/qstash-cli dev -> to test upstash in locally
+- npx @upstash/qstash-cli dev -> to test upstash in locally, this start a upstash server
+- npm install nodemailer -> to send email notification
 
 ## video
 
