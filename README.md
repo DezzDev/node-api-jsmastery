@@ -18,6 +18,8 @@
 - npm install bcryptjs -> allow us to generate randomized strings to hash our passwords
 - npm install @arcjet/node -> to protect our api from bot
 - npm install @upstash/workflow -> to create a workflow to send emails
+- npm install dayjs -> to management dates more easy
+- npx @upstash/qstash-cli dev -> to test upstash in locally
 
 ## video
 

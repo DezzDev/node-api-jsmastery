@@ -9,7 +9,7 @@ const authorize = async(req,res, next) =>{
     let token;
     // check if have a header and if it starts with Bearer
     if(req.headers.authorization && req.headers.authorization.startsWith("Bearer")){
-      console.log({headers:req.headers});
+     
       token = req.headers.authorization.split(" ")[1];      
     }
 

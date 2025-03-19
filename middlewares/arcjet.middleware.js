@@ -5,7 +5,7 @@ const arcjetMiddleware = async (req, res, next) => {
   try {
     // protect the request and tell me the decision
     const decision = await aj.protect(req,{requested:1})
-    console.log("Arcjet decision", decision);
+    
 
     if (decision.isDenied()) {
       if (decision.reason.isRateLimit()) {
